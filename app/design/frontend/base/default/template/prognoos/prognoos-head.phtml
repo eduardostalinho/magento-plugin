@@ -1,0 +1,22 @@
+<?
+/**
+ * @category    OmniBuy
+ * @package     OmniBuy_Prognoos
+ * @author      Fábio <fabio@constance.com.br>
+ */
+//Get current product
+$product = Mage::registry('current_product');
+?>
+<meta type="page" content="product_view"/>
+<!-- Para tracking de usuários logados, adicione as tags abaixo -->
+<meta name="product:username" content="username"/>
+<meta name="product:email" content="user@loja.com.br"/>
+
+<!-- Para tracking de atributos de produto - OBRIGATORIOS -->
+<meta name="product:product_id" content="<?php echo $product->getId() ?>"/>
+<meta name="product:category" content="<?php echo $product->getId() ?>"/>
+<meta name="product:product_name" content="<?php echo $product->getName() ?>"/>
+<meta name="product:product_url" content="<?php echo $product->getUrl() ?>"/>
+<meta name="product:product_img_url" content="<?php echo $product->getImageUrl() ?>"/>
+<meta name="product:price" content="<?php echo $product->getPrice() ?>"/>
+<meta name="product:priceSell" content="<?php echo $product->getPrice() ?>"/>

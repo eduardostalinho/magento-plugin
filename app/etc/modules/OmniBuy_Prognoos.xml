@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <OmniBuy_Prognoos>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>0.1.0</version>
+    </OmniBuy_Prognoos>
+  </modules>
+</config>

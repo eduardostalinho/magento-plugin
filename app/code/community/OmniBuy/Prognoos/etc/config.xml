@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+* @category    OmniBuy
+* @package     OmniBuy_Prognoos
+* @author      Fábio <fabio@constance.com.br>
+-->
+<config>
+    <modules>
+        <OmniBuy_Prognoos>
+            <version>0.1.0</version>
+        </OmniBuy_Prognoos>
+    </modules>
+    <global>
+        <helpers>
+            <prognoos>
+                <class>OmniBuy_Prognoos_Helper</class>
+            </prognoos>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <prognoos>
+                    <file>prognoos.xml</file>
+                </prognoos>
+            </updates>
+        </layout>
+    </frontend>
+</config> 

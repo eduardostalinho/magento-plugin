@@ -13,5 +13,10 @@
         <reference name="footer">
             <block type="core/template" name="prognoos-footer" template="prognoos/prognoos-footer.phtml"></block>
         </reference>
+
+        <reference name="content">
+            <block type="core/template" name="products.info.showcase"
+                   template="prognoos/products-showcase.phtml"/>
+        </reference>
     </catalog_product_view>
 </layout>

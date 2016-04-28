@@ -3,3 +3,4 @@ app/etc/modules/OmniBuy_Prognoos.xml											app/etc/modules/OmniBuy_Prognoos.
 app/design/frontend/base/default/layout/prognoos.xml 							app/design/frontend/base/default/layout/prognoos.xml
 app/design/frontend/base/default/template/prognoos/prognoos-footer.phtml		app/design/frontend/base/default/template/prognoos/prognoos-footer.phtml
 app/design/frontend/base/default/template/prognoos/prognoos-head.phtml			app/design/frontend/base/default/template/prognoos/prognoos-head.phtml
+app/design/frontend/base/default/template/prognoos/products-showcase.phtml		app/design/frontend/base/default/template/prognoos/products-showcase.phtml

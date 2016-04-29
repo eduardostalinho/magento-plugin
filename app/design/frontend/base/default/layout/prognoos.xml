@@ -7,16 +7,16 @@
 <layout version="0.1.0">
     <catalog_product_view>
         <reference name="head">
-            <block type="core/template" name="prognoos-head" template="prognoos/products-head.phtml"></block>
+            <block type="core/template" name="prognoos-head" template="prognoos/product/product-head.phtml"></block>
         </reference>
 
         <reference name="footer">
-            <block type="core/template" name="prognoos-footer" template="prognoos/products-footer.phtml"></block>
+            <block type="core/template" name="prognoos-footer" template="prognoos/product/product-footer.phtml"></block>
         </reference>
 
         <reference name="content">
-            <block type="core/template" name="products.info.showcase"
-                   template="prognoos/products-showcase.phtml"/>
+            <block type="core/template" name="product.info.showcase"
+                   template="prognoos/product/product-showcase.phtml"/>
         </reference>
     </catalog_product_view>
 </layout>

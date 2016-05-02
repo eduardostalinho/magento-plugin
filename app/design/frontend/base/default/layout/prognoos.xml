@@ -5,6 +5,7 @@
 * @author      Fábio <fabio@constance.com.br>
 -->
 <layout version="0.1.0">
+    <!-- Product Page -->
     <catalog_product_view>
         <reference name="head">
             <block type="core/template" name="prognoos-head" template="prognoos/product/product-head.phtml"></block>
@@ -19,4 +20,40 @@
                    template="prognoos/product/product-showcase.phtml"/>
         </reference>
     </catalog_product_view>
+
+    <!-- Category Page -->
+    <catalog_category_view>
+        <reference name="head">
+            <block type="core/template" name="category-head" template="prognoos/category/category-head.phtml"></block>
+        </reference>
+
+        <reference name="content">
+            <block type="core/template" name="category.info.showcase"
+                   template="prognoos/category/category-showcase.phtml"/>
+        </reference>
+    </catalog_category_view>
+
+    <!-- Home Page -->
+    <cms_index_index>
+        <reference name="head">
+            <block type="core/template" name="home-head" template="prognoos/home/home-head.phtml"></block>
+        </reference>
+
+        <reference name="content">
+            <block type="core/template" name="cms.info.showcase"
+                   template="prognoos/home/home-showcase.phtml"/>
+        </reference>
+    </cms_index_index>
+
+    <!-- Checkout Cart Page -->
+    <checkout_cart_index>
+        <reference name="head">
+            <block type="core/template" name="cart-head" template="prognoos/cart/cart-head.phtml"></block>
+        </reference>
+
+        <reference name="content">
+            <block type="core/template" name="cart.info.showcase"
+                   template="prognoos/cart/cart-showcase.phtml"/>
+        </reference>
+    </checkout_cart_index>
 </layout>

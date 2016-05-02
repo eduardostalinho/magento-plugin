@@ -11,6 +11,6 @@ class OmniBuy_Prognoos_Block_ProductsShowcase extends Mage_Catalog_Block_Product
     public function __construct()
     {
         parent::__construct();
-        $this->setTemplate('prognoos/product-showcase.phtml');
+        $this->setTemplate('prognoos/product/product-showcase.phtml');
     }
 }

@@ -6,13 +6,14 @@
  */
 //Get current product
 $product = Mage::registry('current_product');
+$allCategories = Mage::helper('prognoos')->getAllCategoriesByProduct($product->getCategoryCollection());
 ?>
 
 <meta type="page" content="product_view"/>
 <?php if (isset($product)): ?>
     <!-- Para tracking de atributos de produto - OBRIGATORIOS -->
     <meta name="product:product_id" content="<?php echo $product->getId() ?>"/>
-    <meta name="product:category" content="<?php echo $product->getId() ?>"/>
+    <meta name="product:category" content="<?php echo $allCategories ?>"/>
     <meta name="product:product_name" content="<?php echo $product->getName() ?>"/>
     <meta name="product:product_url" content="<?php echo $product->getUrl() ?>"/>
     <meta name="product:product_img_url" content="<?php echo $product->getImageUrl() ?>"/>

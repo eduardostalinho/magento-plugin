@@ -16,6 +16,11 @@
                 <class>OmniBuy_Prognoos_Helper</class>
             </prognoos>
         </helpers>
+        <blocks>
+            <prognoos>
+                <class>OmniBuy_Prognoos_Block</class>
+            </prognoos>
+        </blocks>
     </global>
     <frontend>
         <layout>
@@ -26,4 +31,80 @@
             </updates>
         </layout>
     </frontend>
-</config> 
+
+    <default>
+        <vitrines>
+            <home>
+                <qty_most_visited_products>4</qty_most_visited_products>
+                <qty_recommended>4</qty_recommended>
+                <qty_who_saw_also_saw>4</qty_who_saw_also_saw>
+
+                <layout_recommended>
+                    <![CDATA[
+                        <li class="item last">
+                            <a href="##URL##" title="Chelsea Tee" class="product-image">
+                                <img src="##IMG##" alt="##NAME##"/>
+                            </a>
+
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <a href="##URL##" title="##NAME##">##NAME##</a>
+                                </h3>
+
+                                <div class="price-box">
+                                    <span class="regular-price" id="product-price-410-widget-new-grid">
+                                        <span class="price">##PRICE##</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    ]]>
+                </layout_recommended>
+
+                <layout_who_saw_also_saw>
+                    <![CDATA[
+                        <li class="item last">
+                            <a href="##URL##" title="Chelsea Tee" class="product-image">
+                                <img src="##IMG##" alt="##NAME##"/>
+                            </a>
+
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <a href="##URL##" title="##NAME##">##NAME##</a>
+                                </h3>
+
+                                <div class="price-box">
+                                    <span class="regular-price" id="product-price-410-widget-new-grid">
+                                        <span class="price">##PRICE##</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    ]]>
+                </layout_who_saw_also_saw>
+
+                <layout_most_visited>
+                    <![CDATA[
+                        <li class="item last">
+                            <a href="##URL##" title="Chelsea Tee" class="product-image">
+                                <img src="##IMG##" alt="##NAME##"/>
+                            </a>
+
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <a href="##URL##" title="##NAME##">##NAME##</a>
+                                </h3>
+
+                                <div class="price-box">
+                                    <span class="regular-price" id="product-price-410-widget-new-grid">
+                                        <span class="price">##PRICE##</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    ]]>
+                </layout_most_visited>
+            </home>
+        </vitrines>
+    </default>
+</config>

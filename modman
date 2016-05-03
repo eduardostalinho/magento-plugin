@@ -1,12 +1,12 @@
 app/etc/modules/OmniBuy_Prognoos.xml													app/etc/modules/OmniBuy_Prognoos.xml
 app/code/community/OmniBuy/Prognoos														app/code/community/OmniBuy/Prognoos
 app/design/frontend/base/default/layout/prognoos.xml 									app/design/frontend/base/default/layout/prognoos.xml
+app/design/frontend/base/default/template/prognoos/general/prognoos-footer.phtml		app/design/frontend/base/default/template/prognoos/general/prognoos-footer.phtml
 app/design/frontend/base/default/template/prognoos/home/home-head.phtml					app/design/frontend/base/default/template/prognoos/home/home-head.phtml
 app/design/frontend/base/default/template/prognoos/cart/cart-head.phtml					app/design/frontend/base/default/template/prognoos/cart/cart-head.phtml
 app/design/frontend/base/default/template/prognoos/category/category-head.phtml			app/design/frontend/base/default/template/prognoos/category/category-head.phtml
+app/design/frontend/base/default/template/prognoos/purchase/purchase-head.phtml			app/design/frontend/base/default/template/prognoos/purchase/purchase-head.phtml
 app/design/frontend/base/default/template/prognoos/product/product-head.phtml			app/design/frontend/base/default/template/prognoos/product/product-head.phtml
-app/design/frontend/base/default/template/prognoos/product/product-footer.phtml			app/design/frontend/base/default/template/prognoos/product/product-footer.phtml
-app/design/frontend/base/default/template/prognoos/product/product-showcase.phtml		app/design/frontend/base/default/template/prognoos/product/product-showcase.phtml
-app/design/frontend/base/default/template/prognoos/home/home-showcase.phtml				app/design/frontend/base/default/template/prognoos/home/home-showcase.phtml
-app/design/frontend/base/default/template/prognoos/cart/cart-showcase.phtml				app/design/frontend/base/default/template/prognoos/cart/cart-showcase.phtml
-app/design/frontend/base/default/template/prognoos/category/category-showcase.phtml		app/design/frontend/base/default/template/prognoos/category/category-showcase.phtml
+app/design/frontend/base/default/template/prognoos/showcase/recommended.phtml			app/design/frontend/base/default/template/prognoos/showcase/recommended.phtml
+app/design/frontend/base/default/template/prognoos/showcase/top-visited.phtml			app/design/frontend/base/default/template/prognoos/showcase/top-visited.phtml
+app/design/frontend/base/default/template/prognoos/showcase/who-saw-also-saw.phtml		app/design/frontend/base/default/template/prognoos/showcase/who-saw-also-saw.phtml

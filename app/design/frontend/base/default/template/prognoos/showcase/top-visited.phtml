@@ -1,0 +1,47 @@
+<?php
+/**
+ * @category    OmniBuy
+ * @package     OmniBuy_Prognoos
+ * @author      Fábio <fabio@constance.com.br>
+ */
+$qtdMaxProdutosVitrine = Mage::getStoreConfig('vitrines/home/qty_most_visited_products');
+?>
+
+<script>
+
+    var product_template = '<?php echo preg_replace('/\s+/', ' ',
+        trim(Mage::getStoreConfig('vitrines/home/layout_most_visited')))?>';
+
+    function exibeRecsGeneral(recommendations) {
+        var di = document.getElementById('top-visited-showcase');
+        var elements_html = "";
+
+        for (var i = 0; i < <?php echo $qtdMaxProdutosVitrine ?>; i++) {
+
+            var new_html = product_template.replace(/##NAME##/g, recommendations[i].name);
+            new_html = new_html.replace(/##URL##/g, recommendations[i].url);
+            new_html = new_html.replace(/##IMG##/g, location.protocol + recommendations[i].img_url);
+            new_html = new_html.replace(/##PRICE##/g, 'R$' + recommendations[i].price);
+            elements_html += new_html;
+        }
+        di.innerHTML = elements_html;
+    }
+</script>
+
+<!-- Vitrine - Os mais visitados -->
+<div class="widget widget-new-products">
+    <div class="widget-title">
+        <h2>Os mais visitados</h2>
+    </div>
+
+    <div class="widget-products">
+        <ul id="top-visited-showcase"
+            class="products-grid products-grid--max-<?php echo $qtdMaxProdutosVitrine ?>-col-widget"></ul>
+    </div>
+</div>
+
+<script src="https://cariri.prognoos.com/rec?cid=essenzedipozzi.com.br&jsonp=exibeRecsGeneral"></script>
+
+
+
+

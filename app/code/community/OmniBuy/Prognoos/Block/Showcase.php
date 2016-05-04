@@ -20,24 +20,28 @@ class OmniBuy_Prognoos_Block_Showcase extends Mage_Core_Block_Template
                 if ($status == true) {
                     parent::_construct();
                     $this->setTemplate('prognoos/showcase/who-saw-also-saw.phtml');
-                    break;
+
                 }
+
+                break;
             case OmniBuy_Prognoos_Model_ShowcaseTypes::RECOMMENDED:
                 $status = Mage::getStoreConfig('vitrines/home/enable_recommended');
 
                 if ($status == true) {
                     parent::_construct();
                     $this->setTemplate('prognoos/showcase/recommended.phtml');
-                    break;
                 }
+
+                break;
             case OmniBuy_Prognoos_Model_ShowcaseTypes::THE_MOST_VISITED:
                 $status = Mage::getStoreConfig('vitrines/home/enable_most_visited');
 
                 if ($status == true) {
                     parent::_construct();
                     $this->setTemplate('prognoos/showcase/top-visited.phtml');
-                    break;
                 }
+
+                break;
         }
     }
 }

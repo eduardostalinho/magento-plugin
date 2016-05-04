@@ -8,8 +8,9 @@
 class OmniBuy_Prognoos_Block_Showcase extends Mage_Core_Block_Template
 {
 
-    public function _construct()
+    public function __construct()
     {
+        // $this->getShowcaseType()
         $showcaseType = $this->getData('showcase_type');
         $status = null;
 
@@ -20,7 +21,6 @@ class OmniBuy_Prognoos_Block_Showcase extends Mage_Core_Block_Template
                 if ($status == true) {
                     parent::_construct();
                     $this->setTemplate('prognoos/showcase/who-saw-also-saw.phtml');
-
                 }
 
                 break;
@@ -42,6 +42,8 @@ class OmniBuy_Prognoos_Block_Showcase extends Mage_Core_Block_Template
                 }
 
                 break;
+            default:
+                null;
         }
     }
 }

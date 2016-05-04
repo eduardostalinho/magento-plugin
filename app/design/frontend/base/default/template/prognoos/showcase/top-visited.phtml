@@ -4,7 +4,8 @@
  * @package     OmniBuy_Prognoos
  * @author      Fábio <fabio@constance.com.br>
  */
-$qtdMaxProdutosVitrine = Mage::getStoreConfig('vitrines/home/qty_most_visited_products');
+$pageName = $this->getPageName();
+$qtdMaxProdutosVitrine = Mage::getStoreConfig('vitrines/' . $pageName . '/qty_most_visited_products');
 ?>
 
 <script>

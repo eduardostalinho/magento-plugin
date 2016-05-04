@@ -21,6 +21,14 @@
         <reference name="head">
             <block type="core/template" name="category-head" template="prognoos/category/category-head.phtml"></block>
         </reference>
+
+            <block type="prognoos/showcase" name="category_showcase" showcase_type="recommended"
+                   template="prognoos/showcase/recommended.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>category</value>
+                </action>
+            </block>
     </catalog_category_view>
 
     <!-- Home Page -->

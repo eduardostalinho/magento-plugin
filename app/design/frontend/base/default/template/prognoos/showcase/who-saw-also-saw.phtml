@@ -4,8 +4,10 @@
  * @package     OmniBuy_Prognoos
  * @author      Fábio <fabio@constance.com.br>
  */
+$product = Mage::registry('current_product');
 $blockInfo = $this->getData();
 $maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_who_saw_also_saw');
+$showcaseTitle = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/title_who_saw_also_saw_showcase');
 $prognoosHelper = Mage::helper('prognoos');
 $templateEnabled = $prognoosHelper->getTemplate($blockInfo['page_name'], $blockInfo['showcase_type']);
 $prognoosUser = $prognoosHelper->getPrognoosUser();
@@ -34,10 +36,10 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         }
     </script>
 
-    <!-- Vitrine - Quem viu, viu também -->
+    <!-- Showcase - Who saw, also saw -->
     <div class="widget widget-new-products">
         <div class="widget-title">
-            <h2>Quem viu, viu também</h2>
+            <h2><?php echo $showcaseTitle ?></h2>
         </div>
 
         <div class="widget-products">
@@ -46,7 +48,7 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         </div>
     </div>
 
-    <script
-        src="https://cariri.prognoos.com/heuristic?cid=essenzedipozzi.com.br&heuristic=top_sellers&jsonp=exibeRecs"></script>
+    <!-- Getting showcase -->
+    <script src="https://cariri.prognoos.com/rec?cid=casadamaquina.com.br&iid=<?php echo $product->getId() ?>&jsonp=exibeRecs"></script>
 
 <?php endif; ?>

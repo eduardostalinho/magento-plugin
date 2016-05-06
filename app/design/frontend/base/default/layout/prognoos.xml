@@ -5,6 +5,13 @@
 * @author      Fábio <fabio@constance.com.br>
 -->
 <layout version="0.1.0">
+    <!-- Home Page -->
+    <cms_index_index>
+        <reference name="head">
+            <block type="core/template" name="home-head" template="prognoos/home/home-head.phtml"></block>
+        </reference>
+    </cms_index_index>
+
     <!-- Product Page -->
     <catalog_product_view>
         <reference name="head">
@@ -13,6 +20,32 @@
 
         <reference name="footer">
             <block type="core/template" name="prognoos-footer" template="prognoos/product/product-footer.phtml"></block>
+        </reference>
+
+        <reference name="content">
+            <block type="prognoos/showcase" name="category_similar_product"
+                   template="prognoos/showcase/similar-product.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>product</value>
+                </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>similar_product</value>
+                </action>
+            </block>
+
+            <block type="prognoos/showcase" name="category_who_saw_also_saw"
+                   template="prognoos/showcase/who-saw-also-saw.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>product</value>
+                </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>who_saw_also_saw</value>
+                </action>
+            </block>
         </reference>
     </catalog_product_view>
 
@@ -23,19 +56,7 @@
         </reference>
 
         <reference name="content">
-            <block type="prognoos/showcase" name="category_recommended_showcase"
-                   template="prognoos/showcase/recommended.phtml">
-                <action method="setData">
-                    <name>page_name</name>
-                    <value>category</value>
-                </action>
-                <action method="setData">
-                    <name>showcase_type</name>
-                    <value>recommended</value>
-                </action>
-            </block>
-
-            <block type="prognoos/showcase" name="category_top_visited_showcase"
+            <block type="prognoos/showcase" name="category_most_visited"
                    template="prognoos/showcase/top-visited.phtml">
                 <action method="setData">
                     <name>page_name</name>
@@ -46,32 +67,27 @@
                     <value>most_visited</value>
                 </action>
             </block>
-
-            <block type="prognoos/showcase" name="category_who_saw_also_saw_showcase"
-                   template="prognoos/showcase/who-saw-also-saw.phtml">
-                <action method="setData">
-                    <name>page_name</name>
-                    <value>category</value>
-                </action>
-                <action method="setData">
-                    <name>showcase_type</name>
-                    <value>who_saw_also_saw</value>
-                </action>
-            </block>
         </reference>
     </catalog_category_view>
-
-    <!-- Home Page -->
-    <cms_index_index>
-        <reference name="head">
-            <block type="core/template" name="home-head" template="prognoos/home/home-head.phtml"></block>
-        </reference>
-    </cms_index_index>
 
     <!-- Checkout Cart Page -->
     <checkout_cart_index>
         <reference name="head">
             <block type="core/template" name="cart-head" template="prognoos/cart/cart-head.phtml"></block>
+        </reference>
+
+        <reference name="content">
+            <block type="prognoos/showcase" name="category_who_bought_also_bought"
+                   template="prognoos/showcase/who-bought-also-bought.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>cart</value>
+                </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>who_bought_also_bought</value>
+                </action>
+            </block>
         </reference>
     </checkout_cart_index>
 

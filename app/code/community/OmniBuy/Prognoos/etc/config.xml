@@ -36,7 +36,7 @@
         <vitrines>
             <!-- Home Showcase -->
             <home>
-                <qty_most_visited_products>4</qty_most_visited_products>
+                <qty_best_sellers_products>4</qty_best_sellers_products>
                 <qty_recommended>4</qty_recommended>
                 <qty_who_saw_also_saw>4</qty_who_saw_also_saw>
 
@@ -84,7 +84,7 @@
                     ]]>
                 </layout_who_saw_also_saw>
 
-                <layout_most_visited>
+                <layout_best_sellers>
                     <![CDATA[
                         <li class="item last">
                             <a href="##URL##" title="Chelsea Tee" class="product-image">
@@ -104,58 +104,12 @@
                             </div>
                         </li>
                     ]]>
-                </layout_most_visited>
+                </layout_best_sellers>
             </home>
 
             <!-- Category Showcase -->
             <category>
                 <qty_most_visited_products>4</qty_most_visited_products>
-                <qty_recommended>4</qty_recommended>
-                <qty_who_saw_also_saw>4</qty_who_saw_also_saw>
-
-                <layout_recommended>
-                    <![CDATA[
-                        <li class="item last">
-                            <a href="##URL##" title="Chelsea Tee" class="product-image">
-                                <img src="##IMG##" alt="##NAME##"/>
-                            </a>
-
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="##URL##" title="##NAME##">##NAME##</a>
-                                </h3>
-
-                                <div class="price-box">
-                                    <span class="regular-price" id="product-price-410-widget-new-grid">
-                                        <span class="price">##PRICE##</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    ]]>
-                </layout_recommended>
-
-                <layout_who_saw_also_saw>
-                    <![CDATA[
-                        <li class="item last">
-                            <a href="##URL##" title="Chelsea Tee" class="product-image">
-                                <img src="##IMG##" alt="##NAME##"/>
-                            </a>
-
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="##URL##" title="##NAME##">##NAME##</a>
-                                </h3>
-
-                                <div class="price-box">
-                                    <span class="regular-price" id="product-price-410-widget-new-grid">
-                                        <span class="price">##PRICE##</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    ]]>
-                </layout_who_saw_also_saw>
 
                 <layout_most_visited>
                     <![CDATA[
@@ -182,11 +136,10 @@
 
             <!-- Product Showcase -->
             <product>
-                <qty_most_visited_products>4</qty_most_visited_products>
-                <qty_recommended>4</qty_recommended>
+                <qty_similar_product>4</qty_similar_product>
                 <qty_who_saw_also_saw>4</qty_who_saw_also_saw>
 
-                <layout_recommended>
+                <layout_similar_product>
                     <![CDATA[
                         <li class="item last">
                             <a href="##URL##" title="Chelsea Tee" class="product-image">
@@ -206,7 +159,7 @@
                             </div>
                         </li>
                     ]]>
-                </layout_recommended>
+                </layout_similar_product>
 
                 <layout_who_saw_also_saw>
                     <![CDATA[
@@ -229,37 +182,13 @@
                         </li>
                     ]]>
                 </layout_who_saw_also_saw>
-
-                <layout_most_visited>
-                    <![CDATA[
-                        <li class="item last">
-                            <a href="##URL##" title="Chelsea Tee" class="product-image">
-                                <img src="##IMG##" alt="##NAME##"/>
-                            </a>
-
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="##URL##" title="##NAME##">##NAME##</a>
-                                </h3>
-
-                                <div class="price-box">
-                                    <span class="regular-price" id="product-price-410-widget-new-grid">
-                                        <span class="price">##PRICE##</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    ]]>
-                </layout_most_visited>
             </product>
 
             <!-- Cart Showcase -->
             <cart>
-                <qty_most_visited_products>4</qty_most_visited_products>
-                <qty_recommended>4</qty_recommended>
-                <qty_who_saw_also_saw>4</qty_who_saw_also_saw>
+                <qty_who_bought_also_bought>4</qty_who_bought_also_bought>
 
-                <layout_recommended>
+                <layout_who_bought_also_bought>
                     <![CDATA[
                         <li class="item last">
                             <a href="##URL##" title="Chelsea Tee" class="product-image">
@@ -279,51 +208,7 @@
                             </div>
                         </li>
                     ]]>
-                </layout_recommended>
-
-                <layout_who_saw_also_saws>
-                    <![CDATA[
-                        <li class="item last">
-                            <a href="##URL##" title="Chelsea Tee" class="product-image">
-                                <img src="##IMG##" alt="##NAME##"/>
-                            </a>
-
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="##URL##" title="##NAME##">##NAME##</a>
-                                </h3>
-
-                                <div class="price-box">
-                                    <span class="regular-price" id="product-price-410-widget-new-grid">
-                                        <span class="price">##PRICE##</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    ]]>
-                </layout_who_saw_also_saws>
-
-                <layout_most_visited>
-                    <![CDATA[
-                        <li class="item last">
-                            <a href="##URL##" title="Chelsea Tee" class="product-image">
-                                <img src="##IMG##" alt="##NAME##"/>
-                            </a>
-
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="##URL##" title="##NAME##">##NAME##</a>
-                                </h3>
-
-                                <div class="price-box">
-                                    <span class="regular-price" id="product-price-410-widget-new-grid">
-                                        <span class="price">##PRICE##</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    ]]>
-                </layout_most_visited>
+                </layout_who_bought_also_bought>
             </cart>
         </vitrines>
     </default>

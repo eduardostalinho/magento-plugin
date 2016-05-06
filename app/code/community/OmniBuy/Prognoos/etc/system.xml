@@ -85,6 +85,19 @@
                             <show_in_store>1</show_in_store>
                         </enable_recommended>
 
+                        <title_recommended_showcase>
+                            <label>Título da Vitrine - Recomendados para você</label>
+                            <comment>Ex.: Recomendados pra você</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_recommended>1</enable_recommended>
+                            </depends>
+                        </title_recommended_showcase>
+
                         <layout_recommended>
                             <label>Layout da Vitrine - Recomendados para você</label>
                             <comment>Coloque o layout HTML que será renderizado - IMPORTANTE: Na exibição, as variáveis
@@ -92,7 +105,7 @@
                                 ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto
                             </comment>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>1</sort_order>
+                            <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -105,7 +118,7 @@
                             <label>Máx. de produtos exibidos</label>
                             <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>2</sort_order>
+                            <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -119,11 +132,24 @@
                             <label>Habilitar Vitrine - Quem viu este, viu também</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>3</sort_order>
+                            <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </enable_who_saw_also_saw>
+
+                        <title_who_saw_also_saw_showcase>
+                            <label>Título da Vitrine - Quem viu este, viu também</label>
+                            <comment>Ex.: Quem viu este, viu também</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
+                            </depends>
+                        </title_who_saw_also_saw_showcase>
 
                         <layout_who_saw_also_saw>
                             <label>Layout da Vitrine - Quem viu este, viu também</label>
@@ -131,7 +157,7 @@
                                 ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
                             </comment>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>4</sort_order>
+                            <sort_order>6</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -144,7 +170,7 @@
                             <label>Máx. de produtos exibidos</label>
                             <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>5</sort_order>
+                            <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -153,44 +179,57 @@
                             </depends>
                         </qty_who_saw_also_saw>
 
-                        <!-- Vitrine - Os mais visitados -->
-                        <enable_most_visited translate="label">
-                            <label>Habilitar Vitrine - Os mais visitados</label>
+                        <!-- Vitrine - Os mais vendidos -->
+                        <enable_best_sellers translate="label">
+                            <label>Habilitar Vitrine - Os mais vendidos</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>6</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enable_most_visited>
-
-                        <layout_most_visited>
-                            <label>Layout da Vitrine - Os mais visitados</label>
-                            <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>7</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_most_visited>1</enable_most_visited>
-                            </depends>
-                        </layout_most_visited>
-
-                        <qty_most_visited_products>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
                             <sort_order>8</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                        </enable_best_sellers>
+
+                        <title_best_sellers_showcase>
+                            <label>Título da Vitrine - Os mais vendidos</label>
+                            <comment>Ex.: Os mais vendidos</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_most_visited>1</enable_most_visited>
+                                <enable_best_sellers>1</enable_best_sellers>
                             </depends>
-                        </qty_most_visited_products>
+                        </title_best_sellers_showcase>
+
+                        <layout_best_sellers>
+                            <label>Layout da Vitrine - Os mais vendidos</label>
+                            <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
+                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
+                            </comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_best_sellers>1</enable_best_sellers>
+                            </depends>
+                        </layout_best_sellers>
+
+                        <qty_best_sellers_products>
+                            <label>Máx. de produtos exibidos</label>
+                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_best_sellers>1</enable_best_sellers>
+                            </depends>
+                        </qty_best_sellers_products>
                     </fields>
                 </home>
 
@@ -202,95 +241,29 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <!-- Vitrine - Recomendados para você -->
-                        <enable_recommended translate="label">
-                            <label>Habilitar Vitrine - Recomendados para você</label>
+                        <!-- Vitrine - Os mais visitados -->
+                        <enable_most_visited translate="label">
+                            <label>Habilitar Vitrine - Os mais visitados</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>0</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </enable_recommended>
+                        </enable_most_visited>
 
-                        <layout_recommended>
-                            <label>Layout da Vitrine - Recomendados para você</label>
-                            <comment>Coloque o layout HTML que será renderizado - IMPORTANTE: Na exibição, as variáveis
-                                ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
+                        <title_most_visited_showcase>
+                            <label>Título da Vitrine - Os mais visitados</label>
+                            <comment>Ex.: Os mais visitados</comment>
+                            <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_recommended>1</enable_recommended>
+                                <enable_most_visited>1</enable_most_visited>
                             </depends>
-                        </layout_recommended>
-
-                        <qty_recommended>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>2</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_recommended>1</enable_recommended>
-                            </depends>
-                        </qty_recommended>
-
-                        <!-- Vitrine - Quem viu, viu também -->
-                        <enable_who_saw_also_saw translate="label">
-                            <label>Habilitar Vitrine - Quem viu este, viu também</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>3</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enable_who_saw_also_saw>
-
-                        <layout_who_saw_also_saw>
-                            <label>Layout da Vitrine - Quem viu este, viu também</label>
-                            <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>4</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
-                            </depends>
-                        </layout_who_saw_also_saw>
-
-                        <qty_who_saw_also_saw>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>5</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
-                            </depends>
-                        </qty_who_saw_also_saw>
-
-                        <!-- Vitrine - Os mais visitados -->
-                        <enable_most_visited translate="label">
-                            <label>Habilitar Vitrine - Os mais visitados</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>6</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enable_most_visited>
+                        </title_most_visited_showcase>
 
                         <layout_most_visited>
                             <label>Layout da Vitrine - Os mais visitados</label>
@@ -298,7 +271,7 @@
                                 ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
                             </comment>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>7</sort_order>
+                            <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -311,7 +284,7 @@
                             <label>Máx. de produtos exibidos</label>
                             <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>8</sort_order>
+                            <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -330,56 +303,29 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <!-- Vitrine - Recomendados para você -->
-                        <enable_recommended translate="label">
-                            <label>Habilitar Vitrine - Recomendados para você</label>
+                        <!-- Vitrine - Quem viu, viu também -->
+                        <enable_who_saw_also_saw translate="label">
+                            <label>Habilitar Vitrine - Quem viu este, viu também</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>0</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </enable_recommended>
+                        </enable_who_saw_also_saw>
 
-                        <layout_recommended>
-                            <label>Layout da Vitrine - Recomendados para você</label>
-                            <comment>Coloque o layout HTML que será renderizado - IMPORTANTE: Na exibição, as variáveis
-                                ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
+                        <title_who_saw_also_saw_showcase>
+                            <label>Título da Vitrine - Quem viu este, viu também</label>
+                            <comment>Ex.: Quem viu este, viu também</comment>
+                            <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_recommended>1</enable_recommended>
+                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
                             </depends>
-                        </layout_recommended>
-
-                        <qty_recommended>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>2</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_recommended>1</enable_recommended>
-                            </depends>
-                        </qty_recommended>
-
-                        <!-- Vitrine - Quem viu, viu também -->
-                        <enable_who_saw_also_saw translate="label">
-                            <label>Habilitar Vitrine - Quem viu este, viu também</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>3</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enable_who_saw_also_saw>
+                        </title_who_saw_also_saw_showcase>
 
                         <layout_who_saw_also_saw>
                             <label>Layout da Vitrine - Quem viu este, viu também</label>
@@ -387,7 +333,7 @@
                                 ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
                             </comment>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>4</sort_order>
+                            <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -400,7 +346,7 @@
                             <label>Máx. de produtos exibidos</label>
                             <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>5</sort_order>
+                            <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -409,44 +355,57 @@
                             </depends>
                         </qty_who_saw_also_saw>
 
-                        <!-- Vitrine - Os mais visitados -->
-                        <enable_most_visited translate="label">
-                            <label>Habilitar Vitrine - Os mais visitados</label>
+                        <!-- Vitrine - Produtos Similares -->
+                        <enable_similar_product translate="label">
+                            <label>Habilitar Vitrine - Produtos Similares</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>6</sort_order>
+                            <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </enable_most_visited>
+                        </enable_similar_product>
 
-                        <layout_most_visited>
-                            <label>Layout da Vitrine - Os mais visitados</label>
+                        <title_similar_product_showcase>
+                            <label>Título da Vitrine - Quem viu este, viu também</label>
+                            <comment>Ex.: Quem viu este, viu também</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_similar_product>1</enable_similar_product>
+                            </depends>
+                        </title_similar_product_showcase>
+
+                        <layout_similar_product>
+                            <label>Layout da Vitrine - Produtos Similares</label>
                             <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
                                 ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
                             </comment>
                             <frontend_type>textarea</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_similar_product>1</enable_similar_product>
+                            </depends>
+                        </layout_similar_product>
+
+                        <qty_similar_product>
+                            <label>Máx. de produtos exibidos</label>
+                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
+                            <frontend_type>text</frontend_type>
                             <sort_order>7</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_most_visited>1</enable_most_visited>
+                                <enable_similar_product>1</enable_similar_product>
                             </depends>
-                        </layout_most_visited>
-
-                        <qty_most_visited_products>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>8</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_most_visited>1</enable_most_visited>
-                            </depends>
-                        </qty_most_visited_products>
+                        </qty_similar_product>
                     </fields>
                 </product>
 
@@ -458,123 +417,58 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <!-- Vitrine - Recomendados para você -->
-                        <enable_recommended translate="label">
-                            <label>Habilitar Vitrine - Recomendados para você</label>
+                        <!-- Vitrine - Quem comprou, comprou também -->
+                        <enable_who_bought_also_bought translate="label">
+                            <label>Habilitar Vitrine - Quem comprou, comprou também</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>0</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </enable_recommended>
+                        </enable_who_bought_also_bought>
 
-                        <layout_recommended>
-                            <label>Layout da Vitrine - Recomendados para você</label>
-                            <comment>Coloque o layout HTML que será renderizado - IMPORTANTE: Na exibição, as variáveis
-                                ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
+                        <title_who_bought_also_bought_showcase>
+                            <label>Título da Vitrine - Quem comprou este, comprou também</label>
+                            <comment>Ex.: Quem comprou este, comprou também</comment>
+                            <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_recommended>1</enable_recommended>
+                                <enable_who_bought_also_bought>1</enable_who_bought_also_bought>
                             </depends>
-                        </layout_recommended>
+                        </title_who_bought_also_bought_showcase>
 
-                        <qty_recommended>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
+                        <layout_who_bought_also_bought>
+                            <label>Layout da Vitrine - Quem comprou, comprou também</label>
+                            <comment>Coloque o layout HTML que será renderizado - IMPORTANTE: Na exibição, as variáveis
+                                ##URL##,
+                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto
+                            </comment>
+                            <frontend_type>textarea</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_recommended>1</enable_recommended>
+                                <enable_who_bought_also_bought>1</enable_who_bought_also_bought>
                             </depends>
-                        </qty_recommended>
+                        </layout_who_bought_also_bought>
 
-                        <!-- Vitrine - Quem viu, viu também -->
-                        <enable_who_saw_also_saw translate="label">
-                            <label>Habilitar Vitrine - Quem viu este, viu também</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <qty_who_bought_also_bought>
+                            <label>Máx. de produtos exibidos</label>
+                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
+                            <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </enable_who_saw_also_saw>
-
-                        <layout_who_saw_also_saw>
-                            <label>Layout da Vitrine - Quem viu este, viu também</label>
-                            <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>4</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
                             <depends>
-                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
+                                <enable_who_bought_also_bought>1</enable_who_bought_also_bought>
                             </depends>
-                        </layout_who_saw_also_saw>
-
-                        <qty_who_saw_also_saw>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>5</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_who_saw_also_saw>1</enable_who_saw_also_saw>
-                            </depends>
-                        </qty_who_saw_also_saw>
-
-                        <!-- Vitrine - Os mais visitados -->
-                        <enable_most_visited translate="label">
-                            <label>Habilitar Vitrine - Os mais visitados</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>6</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </enable_most_visited>
-
-                        <layout_most_visited>
-                            <label>Layout da Vitrine - Os mais visitados</label>
-                            <comment>Coloca o layout HTML que será renderizado - Na exibição as variáveis ##URL##,
-                                ##IMG## e ##PRICE## serão automaticamente substituídas pelos valores reais do produto.
-                            </comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>7</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_most_visited>1</enable_most_visited>
-                            </depends>
-                        </layout_most_visited>
-
-                        <qty_most_visited_products>
-                            <label>Máx. de produtos exibidos</label>
-                            <comment>Quantidade máxima de produtos a serem exibidos nesta vitrine.</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>8</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <depends>
-                                <enable_most_visited>1</enable_most_visited>
-                            </depends>
-                        </qty_most_visited_products>
+                        </qty_who_bought_also_bought>
                     </fields>
                 </cart>
             </groups>

@@ -5,8 +5,8 @@
  * @author      Fábio <fabio@constance.com.br>
  */
 $blockInfo = $this->getData();
-$maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_most_visited_products');
-$showcaseTitle = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/title_most_visited_showcase');
+$maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_who_bought_also_bought');
+$showcaseTitle = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/title_who_bought_also_bought_showcase');
 $prognoosHelper = Mage::helper('prognoos');
 $templateEnabled = $prognoosHelper->getTemplate($blockInfo['page_name'], $blockInfo['showcase_type']);
 $prognoosUser = $prognoosHelper->getPrognoosUser();
@@ -17,10 +17,10 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
     <script>
 
         var product_template = '<?php echo preg_replace('/\s+/', ' ',
-            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_most_visited')))?>';
+            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_who_bought_also_bought')))?>';
 
         function exibeRecs(recommendations) {
-            var di = document.getElementById('top-visited-showcase');
+            var di = document.getElementById('who-bought-also-bought-showcase');
             var elements_html = "";
 
             for (var i = 0; i < <?php echo $maxQtyProductsShowcase ?>; i++) {
@@ -35,20 +35,20 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         }
     </script>
 
-    <!-- Showcase - Top visited -->
+    <!-- Showcase - Who bought, also bought -->
     <div class="widget widget-new-products">
         <div class="widget-title">
             <h2><?php echo $showcaseTitle ?></h2>
         </div>
 
         <div class="widget-products">
-            <ul id="top-visited-showcase"
+            <ul id="who-bought-also-bought-showcase"
                 class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget"></ul>
         </div>
     </div>
 
     <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/rec?cid=casadamaquina.com.br&heuristic=top_visited&jsonp=exibeRecs">
-    </script>
+    <script
+        src="https://cariri.prognoos.com/heuristic?cid=essenzedipozzi.com.br&heuristic=top_sellers&jsonp=exibeRecs"></script>
 
 <?php endif; ?>

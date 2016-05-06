@@ -6,6 +6,7 @@
  */
 $blockInfo = $this->getData();
 $maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_recommended');
+$showcaseTitle = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/title_recommended_showcase');
 $prognoosHelper = Mage::helper('prognoos');
 $templateEnabled = $prognoosHelper->getTemplate($blockInfo['page_name'], $blockInfo['showcase_type']);
 $prognoosUser = $prognoosHelper->getPrognoosUser();
@@ -18,7 +19,7 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         var product_template = '<?php echo preg_replace('/\s+/', ' ',
             trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_recommended')))?>';
 
-        function exibeRecsGeneral(recommendations) {
+        function exibeRecs(recommendations) {
             var di = document.getElementById('recommended-showcase');
             var elements_html = "";
 
@@ -34,10 +35,10 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         }
     </script>
 
-    <!-- Vitrine - Recomendados para você -->
+    <!-- Showcase - Recommended for you -->
     <div class="widget widget-new-products">
         <div class="widget-title">
-            <h2>Recomendados para você</h2>
+            <h2><?php echo $showcaseTitle ?></h2>
         </div>
 
         <div class="widget-products">
@@ -46,10 +47,7 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
         </div>
     </div>
 
-    <script src="https://cariri.prognoos.com/rec?cid=essenzedipozzi.com.br&jsonp=exibeRecsGeneral"></script>
-    <script src="https://api.prognoos.com/static/vitrine.js/casadamaquina.com.br"></script>
-    <script>
-        var s1 = new Showcase("casadamaquina.com.br", "heu_top_category", 4, true, 1);
-    </script>
+    <!-- Getting showcase -->
+    <script src="https://cariri.prognoos.com/rec?cid=essenzedipozzi.com.br&jsonp=exibeRecs"></script>
 
 <?php endif; ?>

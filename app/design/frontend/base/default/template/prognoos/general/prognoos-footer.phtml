@@ -4,7 +4,8 @@
  * @package     OmniBuy_Prognoos
  * @author      Fábio <fabio@constance.com.br>
  */
-$urlSite = Mage::getStoreConfig('geral/geral/url_site');
+$prognoosHelper = Mage::helper('prognoos');
+$prognoosUser = $prognoosHelper->getPrognoosUser();
 ?>
 
-<script src="https://api.prognoos.com/static/e.js/<?php echo $urlSite ?>"></script>
+<script src="https://api.prognoos.com/static/e.js/<?php echo $prognoosUser ?>"></script>

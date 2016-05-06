@@ -4,44 +4,49 @@
  * @package     OmniBuy_Prognoos
  * @author      Fábio <fabio@constance.com.br>
  */
-$qtdMaxProdutosVitrine = Mage::getStoreConfig('vitrines/home/qty_who_saw_also_saw');
+$blockInfo = $this->getData();
+$maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_who_saw_also_saw');
+$prognoosHelper = Mage::helper('prognoos');
+$templateEnabled = $prognoosHelper->getTemplate($blockInfo['page_name'], $blockInfo['showcase_type']);
+$prognoosUser = $prognoosHelper->getPrognoosUser();
 ?>
 
-<script>
+<?php if ($templateEnabled): ?>
 
-    var product_template = '<?php echo preg_replace('/\s+/', ' ',
-        trim(Mage::getStoreConfig('vitrines/home/layout_who_saw_also_saw')))?>';
+    <script>
 
-    function exibeRecs(recommendations) {
-        var di = document.getElementById('who-saw-also-saw-showcase');
-        var elements_html = "";
+        var product_template = '<?php echo preg_replace('/\s+/', ' ',
+            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_who_saw_also_saw')))?>';
 
-        for (var i = 0; i < <?php echo $qtdMaxProdutosVitrine ?>; i++) {
+        function exibeRecs(recommendations) {
+            var di = document.getElementById('who-saw-also-saw-showcase');
+            var elements_html = "";
 
-            var new_html = product_template.replace(/##NAME##/g, recommendations[i].name);
-            new_html = new_html.replace(/##URL##/g, recommendations[i].url);
-            new_html = new_html.replace(/##IMG##/g, location.protocol + recommendations[i].img_url);
-            new_html = new_html.replace(/##PRICE##/g, 'R$' + recommendations[i].price);
-            elements_html += new_html;
+            for (var i = 0; i < <?php echo $maxQtyProductsShowcase ?>; i++) {
+
+                var new_html = product_template.replace(/##NAME##/g, recommendations[i].name);
+                new_html = new_html.replace(/##URL##/g, recommendations[i].url);
+                new_html = new_html.replace(/##IMG##/g, location.protocol + recommendations[i].img_url);
+                new_html = new_html.replace(/##PRICE##/g, 'R$' + recommendations[i].price);
+                elements_html += new_html;
+            }
+            di.innerHTML = elements_html;
         }
-        di.innerHTML = elements_html;
-    }
-</script>
+    </script>
 
-<!-- Vitrine - Quem viu, viu também -->
-<div class="widget widget-new-products">
-    <div class="widget-title">
-        <h2>Quem viu, viu também</h2>
+    <!-- Vitrine - Quem viu, viu também -->
+    <div class="widget widget-new-products">
+        <div class="widget-title">
+            <h2>Quem viu, viu também</h2>
+        </div>
+
+        <div class="widget-products">
+            <ul id="who-saw-also-saw-showcase"
+                class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget"></ul>
+        </div>
     </div>
 
-    <div class="widget-products">
-        <ul id="who-saw-also-saw-showcase"
-            class="products-grid products-grid--max-<?php echo $qtdMaxProdutosVitrine ?>-col-widget"></ul>
-    </div>
-</div>
+    <script
+        src="https://cariri.prognoos.com/heuristic?cid=essenzedipozzi.com.br&heuristic=top_sellers&jsonp=exibeRecs"></script>
 
-<script src="https://cariri.prognoos.com/heuristic?cid=essenzedipozzi.com.br&heuristic=top_sellers&jsonp=exibeRecs"></script>
-
-
-
-
+<?php endif; ?>

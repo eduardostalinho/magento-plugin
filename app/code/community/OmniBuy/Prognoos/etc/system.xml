@@ -40,7 +40,7 @@
                             <comment>Habilitar Prognoos</comment>
                         </enable>
 
-                        <url_site>
+                        <user_prognoos>
                             <label>URL do Site</label>
                             <comment>Ex.: www.minhaloja.com.br</comment>
                             <frontend_type>text</frontend_type>
@@ -51,7 +51,7 @@
                             <depends>
                                 <enable>1</enable>
                             </depends>
-                        </url_site>
+                        </user_prognoos>
                     </fields>
                 </geral>
             </groups>

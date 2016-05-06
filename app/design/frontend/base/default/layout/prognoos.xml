@@ -22,13 +22,43 @@
             <block type="core/template" name="category-head" template="prognoos/category/category-head.phtml"></block>
         </reference>
 
-            <block type="prognoos/showcase" name="category_showcase" showcase_type="recommended"
+        <reference name="content">
+            <block type="prognoos/showcase" name="category_recommended_showcase"
                    template="prognoos/showcase/recommended.phtml">
                 <action method="setData">
                     <name>page_name</name>
                     <value>category</value>
                 </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>recommended</value>
+                </action>
             </block>
+
+            <block type="prognoos/showcase" name="category_top_visited_showcase"
+                   template="prognoos/showcase/top-visited.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>category</value>
+                </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>most_visited</value>
+                </action>
+            </block>
+
+            <block type="prognoos/showcase" name="category_who_saw_also_saw_showcase"
+                   template="prognoos/showcase/who-saw-also-saw.phtml">
+                <action method="setData">
+                    <name>page_name</name>
+                    <value>category</value>
+                </action>
+                <action method="setData">
+                    <name>showcase_type</name>
+                    <value>who_saw_also_saw</value>
+                </action>
+            </block>
+        </reference>
     </catalog_category_view>
 
     <!-- Home Page -->

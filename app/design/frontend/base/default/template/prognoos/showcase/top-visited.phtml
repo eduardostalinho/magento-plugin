@@ -49,7 +49,7 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
     </div>
 
     <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/heuristic?cid=casadamaquina.com.br&heuristic=<?php echo 'top_Automotivos'//$category->getId() ?>&jsonp=exibeRecs">
+    <script src="https://cariri.prognoos.com/heuristic?cid=<?php echo $prognoosUser ?>&heuristic=<?php echo $category->getId() ?>&jsonp=exibeRecs">
     </script>
 
 <?php endif; ?>

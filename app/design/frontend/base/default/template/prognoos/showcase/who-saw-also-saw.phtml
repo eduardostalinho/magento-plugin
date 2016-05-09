@@ -49,6 +49,6 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
     </div>
 
     <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/rec?cid=casadamaquina.com.br&iid=<?php echo $product->getId() ?>&jsonp=exibeRecs"></script>
+    <script src="https://cariri.prognoos.com/rec?cid=<?php echo $prognoosUser ?>&iid=<?php echo $product->getId() ?>&jsonp=exibeRecs"></script>
 
 <?php endif; ?>

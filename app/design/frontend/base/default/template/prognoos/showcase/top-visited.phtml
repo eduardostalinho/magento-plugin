@@ -4,6 +4,7 @@
  * @package     OmniBuy_Prognoos
  * @author      Fábio <fabio@constance.com.br>
  */
+$category = Mage::registry('current_category');
 $blockInfo = $this->getData();
 $maxQtyProductsShowcase = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/qty_most_visited_products');
 $showcaseTitle = Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/title_most_visited_showcase');
@@ -48,7 +49,7 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
     </div>
 
     <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/rec?cid=casadamaquina.com.br&heuristic=top_visited&jsonp=exibeRecs">
+    <script src="https://cariri.prognoos.com/rec?cid=casadamaquina.com.br&heuristic=<?php echo $category->getId() ?>&jsonp=exibeRecs">
     </script>
 
 <?php endif; ?>

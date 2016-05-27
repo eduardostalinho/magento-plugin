@@ -98,10 +98,10 @@
         </reference>
     </onepagecheckout_index_index>
 
-    <!-- Footer (General) -->
+    <!-- Body (General) -->
     <default>
-        <reference name="footer">
-            <block type="page/html_footer" template="prognoos/general/prognoos-footer.phtml" name="prognoos-footer"/>
+        <reference name="before_body_end">
+            <block type="core/template" template="prognoos/general/prognoos-body.phtml" name="prognoos-body"/>
         </reference>
     </default>
 </layout>

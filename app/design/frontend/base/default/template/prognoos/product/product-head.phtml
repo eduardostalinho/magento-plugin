@@ -13,7 +13,7 @@ $allCategories = Mage::helper('prognoos')->getAllCategoriesByProduct($product->g
 <!-- Para tracking de atributos de produto - OBRIGATORIOS -->
 <meta name="product:product_id" content="<?php echo $product->getId() ?>"/>
 <meta name="product:category" content="<?php echo $allCategories ?>"/>
-<meta name="product:product_name" content="<?php echo $product->getName() ?>"/>
+<meta name="product:product_name" content="<?php echo $product->getShortDescription() ?>"/>
 <meta name="product:product_url" content="<?php echo $product->getUrl() ?>"/>
 <meta name="product:product_img_url" content="<?php echo $product->getImageUrl() ?>"/>
 <meta name="product:price" content="<?php echo $product->getPrice() ?>"/>

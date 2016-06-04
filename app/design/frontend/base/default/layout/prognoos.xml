@@ -100,7 +100,7 @@
 
     <!-- Body (General) -->
     <default>
-        <reference name="before_body_end">
+        <reference name="after_body_start">
             <block type="core/template" template="prognoos/general/prognoos-body.phtml" name="prognoos-body"/>
         </reference>
     </default>

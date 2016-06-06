@@ -14,42 +14,26 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
 ?>
 
 <?php if ($templateEnabled): ?>
-
-    <script>
-
-        var product_template = '<?php echo preg_replace('/\s+/', ' ',
-            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_most_visited')))?>';
-
-        function exibeRecs(recommendations) {
-            var di = document.getElementById('top-visited-showcase');
-            var elements_html = "";
-
-            for (var i = 0; i < <?php echo $maxQtyProductsShowcase ?>; i++) {
-
-                var new_html = product_template.replace(/##NAME##/g, recommendations[i].name);
-                new_html = new_html.replace(/##URL##/g, recommendations[i].url);
-                new_html = new_html.replace(/##IMG##/g, location.protocol + recommendations[i].img_url);
-                new_html = new_html.replace(/##PRICE##/g, 'R$' + recommendations[i].price);
-                elements_html += new_html;
-            }
-            di.innerHTML = elements_html;
-        }
-    </script>
-
     <!-- Showcase - Top visited -->
-    <div class="widget widget-new-products">
-        <div class="widget-title">
-            <h2><?php echo $showcaseTitle ?></h2>
-        </div>
+    <div id="prognoos_heu_top_category"></div>
 
-        <div class="widget-products">
-            <ul id="top-visited-showcase"
-                class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget"></ul>
+    <div id="prognoos_product_style3_line" style="display:none;">
+        <div class="widget widget-new-products">
+            <div class="widget-title">
+                <h2>##TITLE##</h2>
+            </div>
+            <div class="widget-products">
+                <ul id="top-visited-showcase"
+                    class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget">##INNER##</ul>
+            </div>
         </div>
     </div>
+    <div id="prognoos_product_style3" style="display:none;">
+        <?php echo preg_replace('/\s+/', ' ',
+            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_most_visited')))?>
+    </div>
 
-    <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/heuristic?cid=<?php echo $prognoosUser ?>&heuristic=<?php echo $category->getId() ?>&jsonp=exibeRecs">
+    <script>
+    PrognoosFacade.category_popv1("<?php echo $prognoosUser ?>", <?php echo $maxQtyProductsShowcase ?>, "<?php echo $category->getId() ?>");
     </script>
-
 <?php endif; ?>

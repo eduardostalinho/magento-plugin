@@ -30,8 +30,8 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
     </div>
 
     <div id="prognoos_product_style2" style="display:none;">
-        var product_template = '<?php echo preg_replace('/\s+/', ' ',
-            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_similar_product')))?>';
+        <?php echo preg_replace('/\s+/', ' ',
+            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_similar_product')))?>;
     </div>
     <script>
         var extra = {

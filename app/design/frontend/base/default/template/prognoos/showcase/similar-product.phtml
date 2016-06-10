@@ -14,41 +14,29 @@ $prognoosUser = $prognoosHelper->getPrognoosUser();
 ?>
 
 <?php if ($templateEnabled): ?>
-
-    <script>
-
-        var product_template = '<?php echo preg_replace('/\s+/', ' ',
-            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_similar_product')))?>';
-
-        function exibeRecs(recommendations) {
-            var di = document.getElementById('similar-product-showcase');
-            var elements_html = "";
-
-            for (var i = 0; i < <?php echo $maxQtyProductsShowcase ?>; i++) {
-
-                var new_html = product_template.replace(/##NAME##/g, recommendations[i].name);
-                new_html = new_html.replace(/##URL##/g, recommendations[i].url);
-                new_html = new_html.replace(/##IMG##/g, location.protocol + recommendations[i].img_url);
-                new_html = new_html.replace(/##PRICE##/g, 'R$' + recommendations[i].price);
-                elements_html += new_html;
-            }
-            di.innerHTML = elements_html;
-        }
-    </script>
-
     <!-- Showcase - Similar products -->
-    <div class="widget widget-new-products">
-        <div class="widget-title">
-            <h2><?php echo $showcaseTitle ?></h2>
-        </div>
+    <div id="prognoos_lsi_showcase"></div>
 
-        <div class="widget-products">
-            <ul id="similar-product-showcase"
-                class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget"></ul>
+    <div id="prognoos_product_style2_line" style="display:none;">
+        <div class="widget widget-new-products">
+            <div class="widget-title">
+                <h2>##TITLE##</h2>
+            </div>
+            <div class="widget-products">
+                <ul id="similar-product-showcase"
+                    class="products-grid products-grid--max-<?php echo $maxQtyProductsShowcase ?>-col-widget">##INNER##</ul>
+            </div>
         </div>
     </div>
 
-    <!-- Getting showcase -->
-    <script src="https://cariri.prognoos.com/rec?cid=<?php echo $prognoosUser ?>&lsi=<?php echo $product->getId() ?>&jsonp=exibeRecs"></script>
-
+    <div id="prognoos_product_style2" style="display:none;">
+        <?php echo preg_replace('/\s+/', ' ',
+            trim(Mage::getStoreConfig('vitrines/' . $blockInfo['page_name'] . '/layout_similar_product')))?>
+    </div>
+    <script>
+        var extra = {
+            reference: <?php echo $product->getId() ?>
+        };
+        PrognoosFacade.similar("<?php echo $prognoosUser ?>", <?php echo $maxQtyProductsShowcase ?>, extra);
+    </script>
 <?php endif; ?>

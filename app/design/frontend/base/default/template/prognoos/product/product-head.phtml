@@ -27,12 +27,13 @@ function IsNullOrEmptyString($value){
     return (!isset($value) || trim($value)==='');
 }
 
-foreach (explode(",", attributes_str) as $attr) {
+foreach (explode(",", $attributes_str) as $attr) {
     $meta_tag = '<meta name="product:%s" content="%s" />';
-    $value = $product->getAttributeText($attr);
+    $value = $product->getData();
 
     if (!IsNullOrEmptyString($value)) {
-        echo sprintf($meta_tag, $attr, $product->getAttributeText($attr));
+        echo sprintf($meta_tag, $attr, $product->getData($attr));
     }
 }
 ?>
+

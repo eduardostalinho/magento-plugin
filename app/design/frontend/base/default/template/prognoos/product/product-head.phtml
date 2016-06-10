@@ -21,6 +21,7 @@ $allCategories = Mage::helper('prognoos')->getAllCategoriesByProduct($product->g
 
 <?php
 
+$meta_tag = '<meta name="product:%s" content="%s" />';
 $attributes_str = "";
 
 function IsNullOrEmptyString($value){
@@ -28,7 +29,6 @@ function IsNullOrEmptyString($value){
 }
 
 foreach (explode(",", $attributes_str) as $attr) {
-    $meta_tag = '<meta name="product:%s" content="%s" />';
     $value = $product->getData();
 
     if (!IsNullOrEmptyString($value)) {

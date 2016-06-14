@@ -7,3 +7,13 @@
 ?>
 
 <meta type="page" content="purchase_view"/>
+
+<?php
+$meta_tag = '<meta name="product:product_id" content="%s" />';
+$items = Mage::getModel('checkout/cart')->getQuote()->getAllItems();
+
+foreach ($items as item) {
+    $value = $product->getId();
+    echo sprintf($meta_tag, $value);
+}
+?>

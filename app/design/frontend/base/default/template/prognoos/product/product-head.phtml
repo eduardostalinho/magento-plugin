@@ -18,3 +18,22 @@ $allCategories = Mage::helper('prognoos')->getAllCategoriesByProduct($product->g
 <meta name="product:product_img_url" content="<?php echo $product->getImageUrl() ?>"/>
 <meta name="product:price" content="<?php echo $product->getPrice() ?>"/>
 <meta name="product:priceSell" content="<?php echo $product->getPrice() ?>"/>
+
+<?php
+
+$meta_tag = '<meta name="product:%s" content="%s" />';
+$attributes_str = "";
+
+function IsNullOrEmptyString($value){
+    return (!isset($value) || trim($value)==='');
+}
+
+foreach (explode(",", $attributes_str) as $attr) {
+    $value = $product->getData();
+
+    if (!IsNullOrEmptyString($value)) {
+        echo sprintf($meta_tag, $attr, $product->getData($attr));
+    }
+}
+?>
+

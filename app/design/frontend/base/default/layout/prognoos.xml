@@ -94,7 +94,7 @@
     <!-- Purchase Cart Page -->
     <onepagecheckout_index_index>
         <reference name="head">
-            <block type="core/template" name="cart-head" template="prognoos/purchase/purchase-head.phtml"></block>
+            <block type="core/template" name="purchase-head" template="prognoos/purchase/purchase-head.phtml"></block>
         </reference>
     </onepagecheckout_index_index>
 

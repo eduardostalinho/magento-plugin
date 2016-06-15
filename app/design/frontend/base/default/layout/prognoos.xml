@@ -92,11 +92,11 @@
     </checkout_cart_index>
 
     <!-- Purchase Cart Page -->
-    <checkout-onepage-success>
+    <checkout_onepage_success>
         <reference name="head">
             <block type="core/template" name="purchase-head" template="prognoos/purchase/purchase-head.phtml"></block>
         </reference>
-    </checkout-onepage-success>
+    </checkout_onepage_success>
 
     <!-- Body (General) -->
     <default>

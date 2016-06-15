@@ -17,14 +17,14 @@ $productsList = array();
 foreach ($items as $item) {
     $parentId = null;
     $productId = $item->getProductId();
-    //Receives father ID, if exist
+    //Receives parent ID, if exists
     $parentProducts = Mage::getResourceSingleton('catalog/product_type_configurable')
         ->getParentIdsByChild($productId);
 
     if ($parentProducts != null) {
         $parentId = $parentProducts[0];
     }
-
+    //Checks if exists parent product, if exists, add parent ID in array, case not, then add simple product ID in array
     if ($parentId != null && !$productsList[$parentId]) {
         $productsList[$parentId] = $parentId;
         echo sprintf($metaTag, $parentProducts[0]);

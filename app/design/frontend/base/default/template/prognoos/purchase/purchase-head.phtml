@@ -9,11 +9,28 @@
 <meta type="page" content="purchase_view"/>
 
 <?php
-$meta_tag = '<meta name="product:product_id" content="%s" />';
-$items = Mage::getModel('checkout/cart')->getQuote()->getAllItems();
+$metaTag = '<meta name="product:product_id" content="%s" />';
+$order = Mage::getSingleton('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId());
+$items = $order->getAllItems();
+$productsList = array();
 
-foreach ($items as item) {
-    $value = $product->getId();
-    echo sprintf($meta_tag, $value);
+foreach ($items as $item) {
+    $parentId = null;
+    $productId = $item->getProductId();
+    //Receives father ID, if exist
+    $parentProducts = Mage::getResourceSingleton('catalog/product_type_configurable')
+        ->getParentIdsByChild($productId);
+
+    if ($parentProducts != null) {
+        $parentId = $parentProducts[0];
+    }
+
+    if ($parentId != null && !$productsList[$parentId]) {
+        $productsList[$parentId] = $parentId;
+        echo sprintf($metaTag, $parentProducts[0]);
+    } elseif (!$productsList[$parentId]) {
+        $productsList[$productId] = $productId;
+        echo sprintf($metaTag, $productId);
+    }
 }
 ?>
